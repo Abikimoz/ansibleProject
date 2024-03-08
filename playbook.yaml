@@ -1,5 +1,13 @@
 - hosts: all
   tasks:
-     - ansible.builtin.file:
-         name: /tmp/ansible_was_here
-         state: touch
+    - name: /tmp/ansible_was_here
+      ansible.builtin.file:
+        path: /tmp/my.conf
+        state: touch
+
+    # - file: 
+    #   state: touch
+    #   owner: root
+    #   group: root
+    #   mode: 0600
+    #   become: yes
